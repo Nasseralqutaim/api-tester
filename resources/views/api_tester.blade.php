@@ -52,3 +52,16 @@
 </body>
 
 </html>
+
+
+<style>
+  .headers {
+    background-color: #eee;
+    padding: 1rem;
+  }
+
+  .body {
+    background-color: #ddd;
+    padding: 1rem;
+  }
+</style>
