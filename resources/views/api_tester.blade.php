@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+
+  <!-- Prism.js -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.js"></script>
   <meta charset="UTF-8">
   <title>API Tester</title>
   <!-- CSS -->
