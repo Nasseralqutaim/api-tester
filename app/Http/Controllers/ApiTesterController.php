@@ -17,17 +17,20 @@ class ApiTesterController extends Controller
         $url = $request->input('url');
         $method = $request->input('method');
 
-        // Prepare the HTTP request
-        $http = Http::withOptions(['http_errors' => false]); // Don't throw exceptions for 4xx and 5xx responses
+        $http = Http::withOptions(['http_errors' => false]);
 
-        // Send the HTTP request and get the response
         $response = $http->send($method, $url);
 
-        // Return the response
-        return response()->json([
+        $responseBody = json_decode((string) $response->body(), true);
+
+        // Store the response in the session
+        session([
             'status' => $response->status(),
             'headers' => $response->headers(),
-            'body' => $response->json(),
+            'body' => $responseBody
         ]);
+
+        // Redirect back to the form
+        return redirect('/');
     }
 }

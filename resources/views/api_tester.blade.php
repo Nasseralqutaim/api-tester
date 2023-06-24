@@ -14,6 +14,16 @@
 
     <!-- The API test form -->
     <form method="POST" action="{{ route('testApi') }}">
+      <!-- The API response -->
+      @if (session('status'))
+      <div class="mt-5">
+        <h2>Response</h2>
+        <p>Status: {{ session('status') }}</p>
+        <pre class="headers"><code>{{ json_encode(session('headers'), JSON_PRETTY_PRINT) }}</code></pre>
+        <pre class="body"><code>{{ json_encode(session('body'), JSON_PRETTY_PRINT) }}</code></pre>
+      </div>
+      @endif
+
       @csrf
       <div class="mb-3">
         <label for="method" class="form-label">HTTP Method</label>
