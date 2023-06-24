@@ -45,6 +45,10 @@
       <button type="submit" class="btn btn-primary">Test API</button>
     </form>
   </div>
+  <script>
+    // Highlight headers and body
+    Prism.highlightAll();
+  </script>
 </body>
 
 </html>
